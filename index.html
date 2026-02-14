@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Pour Salsabil & Ayoub 💖</title>
+    <meta name="description" content="Un site dédié à ma sœur Salsabil et mon frère Ayoub.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader">
+        <div class="loader-heart">💖</div>
+        <p class="loader-text">Rien que pour vous...</p>
+    </div>
+
+    <!-- ===== FLOATING HEARTS CANVAS ===== -->
+    <canvas id="hearts-canvas"></canvas>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="section hero">
+        <div class="hero-content">
+            <div class="hero-sparkle sparkle-1">✨</div>
+            <div class="hero-sparkle sparkle-2">💫</div>
+            <div class="hero-sparkle sparkle-3">✨</div>
+            <div class="hero-subtitle" id="hero-subtitle">Pour mon frère et ma sœur</div>
+            <h1 class="hero-title" id="hero-title">
+                <span class="title-line">Salsabil &</span>
+                <span class="title-line">Ayoub</span>
+            </h1>
+            <div class="hero-heart-big" id="hero-heart">❤️</div>
+            <div class="scroll-indicator">
+                <span>Descends pour découvrir</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+        <div class="hero-petals">
+            <div class="petal petal-1">🌸</div>
+            <div class="petal petal-2">🌷</div>
+            <div class="petal petal-3">🌹</div>
+            <div class="petal petal-4">🌺</div>
+            <div class="petal petal-5">💐</div>
+            <div class="petal petal-6">🌸</div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section id="gallery" class="section gallery-section">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Nos Souvenirs</h2>
+            <p class="section-subtitle" data-reveal>Trio pour la vie 💎</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <div class="gallery-card" data-reveal data-delay="0">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%)">
+                    <div class="gallery-card-emoji">🤪</div>
+                    <div class="gallery-card-caption">Nos délires</div>
+                </div>
+            </div>
+            <div class="gallery-card gallery-card-tall" data-reveal data-delay="0.1">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)">
+                    <div class="gallery-card-emoji">🤝</div>
+                    <div class="gallery-card-caption">Toujours unis</div>
+                </div>
+            </div>
+            <div class="gallery-card" data-reveal data-delay="0.2">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)">
+                    <div class="gallery-card-emoji">🌱</div>
+                    <div class="gallery-card-caption">Grandir ensemble</div>
+                </div>
+            </div>
+            <div class="gallery-card" data-reveal data-delay="0.3">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #fce7f3 0%, #f472b6 100%)">
+                    <div class="gallery-card-emoji">🌸</div>
+                    <div class="gallery-card-caption">Salsabil la douce</div>
+                </div>
+            </div>
+            <div class="gallery-card gallery-card-tall" data-reveal data-delay="0.15">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #e0f2fe 0%, #7dd3fc 100%)">
+                    <div class="gallery-card-emoji">💪</div>
+                    <div class="gallery-card-caption">Ayoub la force</div>
+                </div>
+            </div>
+            <div class="gallery-card" data-reveal data-delay="0.25">
+                <div class="gallery-card-inner" style="--gradient: linear-gradient(135deg, #ddd6fe 0%, #a78bfa 100%)">
+                    <div class="gallery-card-emoji">❤️</div>
+                    <div class="gallery-card-caption">Fratrie en or</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MESSAGE SECTION ===== -->
+    <section id="message" class="section message-section">
+        <div class="message-container glass-card">
+            <div class="message-icon" data-reveal>💌</div>
+            <h2 class="section-title" data-reveal>Un message pour vous</h2>
+            <div class="typewriter-container" id="typewriter-container">
+                <p class="typewriter-text" id="typewriter-text"></p>
+                <span class="typewriter-cursor" id="typewriter-cursor">|</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3D CARD SECTION ===== -->
+    <section id="card3d" class="section card3d-section">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Une Carte Spéciale</h2>
+            <p class="section-subtitle" data-reveal>Clique pour ouvrir 💝</p>
+        </div>
+        <div class="card3d-wrapper" data-reveal>
+            <div class="card3d" id="card3d">
+                <div class="card3d-front">
+                    <div class="card3d-front-decoration">
+                        <span class="card3d-heart">💖</span>
+                        <h3>Pour Vous</h3>
+                        <p>Salsabil & Ayoub</p>
+                        <span class="card3d-flower-left">🌸</span>
+                        <span class="card3d-flower-right">✨</span>
+                    </div>
+                </div>
+                <div class="card3d-inside-left">
+                    <div class="card3d-inside-pattern"></div>
+                </div>
+                <div class="card3d-inside-right">
+                    <div class="card3d-inside-content">
+                        <span class="card3d-inside-heart">💕</span>
+                        <p>Vous êtes les meilleurs frère et sœur qu'on puisse rêver d'avoir.</p>
+                        <span class="card3d-inside-signature">— Votre frère qui vous aime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SURPRISE LETTER SECTION ===== -->
+    <section id="letter" class="section letter-section">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Une Surprise Pour Toi</h2>
+            <p class="section-subtitle" data-reveal>Appuie sur le bouton... 🎁</p>
+        </div>
+        <div class="letter-wrapper" data-reveal>
+            <button class="surprise-btn" id="surprise-btn">
+                <span class="surprise-btn-text">Ouvre ta surprise</span>
+                <span class="surprise-btn-icon">🎀</span>
+            </button>
+        </div>
+
+        <!-- Letter Modal -->
+        <div class="letter-modal" id="letter-modal">
+            <div class="letter-modal-overlay" id="letter-modal-overlay"></div>
+            <div class="letter-envelope" id="letter-envelope">
+                <div class="envelope-flap" id="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="letter-paper" id="letter-paper">
+                        <div class="letter-content">
+                            <p class="letter-greeting">Chers Salsabil et Ayoub,</p>
+                            <p class="letter-body-text">
+                                Je voulais prendre un moment pour vous dire à quel point vous comptez pour moi.
+                                On a peut-être nos disputes et nos différences, mais au fond, vous êtes mes piliers.
+                                Ayoub, merci pour ta force et tes conseils. Salsabil, merci pour ta douceur et ta
+                                bienveillance.
+                            </p>
+                            <p class="letter-body-text">
+                                Je suis fier(e) de tout ce que vous accomplissez et de la personne que vous devenez
+                                chacun.
+                                Ensemble, on est une équipe, une famille, pour toujours. ✨
+                            </p>
+                            <p class="letter-body-text">
+                                Jamais seul, toujours ensemble. 💪❤️
+                            </p>
+                            <p class="letter-signature">
+                                Avec tout mon amour,<br>
+                                <span class="letter-sign">Chihebeddine</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-hearts">💖 💝 💗 💖 💝</div>
+        <p class="footer-text">Fait avec ❤️ pour Salsabil & Ayoub</p>
+        <p class="footer-year">2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
